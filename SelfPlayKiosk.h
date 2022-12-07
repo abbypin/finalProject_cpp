@@ -24,18 +24,26 @@ class SelfPlayKiosk {
             return customersServed;
         }//end getCustomersServed()
 
-        int getTotalSales() const {
+        double getTotalSales() const {
             return totalSales;
         }//end getTotalSales()
 
-        int getCurrentAmountDue() const {
+        double getCurrentAmountDue() const {
             return currentAmountDue;
         }//end getCurrentAmountDue()
 
-        // void scanItem();
+        // Step 2
+        void ScanItem(double price);
         // void cancelTransaction();
         // void ckeckout();
         // double makePayment();
 };//end SelfPlayKiosk
+
+// Step 2
+void SelfPlayKiosk::ScanItem(double price) {
+    if (price > 0)
+        currentAmountDue += price;
+    //return currentAmountDue;
+}//end ScanItem()
 
 #endif
