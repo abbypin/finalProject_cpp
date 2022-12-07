@@ -27,5 +27,39 @@ int main() {
     kiosk.ScanItem(thirdPrice);
     cout << "Third Price Scan: " << fixed << setprecision(2) << kiosk.getCurrentAmountDue() << endl;
 
+    SelfPlayKiosk kiosk2 = SelfPlayKiosk();
+    SelfPlayKiosk kiosk3 = SelfPlayKiosk();
+    SelfPlayKiosk kiosk4 = SelfPlayKiosk();
+    SelfPlayKiosk kiosk5 = SelfPlayKiosk();
+    double fourthPrice = 10.40;
+
+    // Step 3 Test
+    cout << "\nThird Test: " << endl;
+    kiosk2.ScanItem(firstPrice);
+    kiosk2.Checkout();
+    cout << "Current Amount Due: " << fixed << setprecision(2) << kiosk2.getCurrentAmountDue() << endl;
+    cout << "Total Sales: " << fixed << setprecision(2) << kiosk2.getTotalSales() << endl;
+
+    kiosk3.ScanItem(firstPrice);
+    kiosk3.ScanItem(secondPrice);
+    kiosk3.Checkout();
+    cout << "Current Amount Due: " << fixed << setprecision(2) << kiosk3.getCurrentAmountDue() << endl;
+    cout << "Total Sales: " << fixed << setprecision(2) << kiosk3.getTotalSales() << endl;
+
+    kiosk4.ScanItem(firstPrice);
+    kiosk4.ScanItem(secondPrice);
+    kiosk4.ScanItem(thirdPrice);
+    kiosk4.Checkout();
+    cout << "Current Amount Due: " << fixed << setprecision(2) << kiosk4.getCurrentAmountDue() << endl;
+    cout << "Total Sales: " << fixed << setprecision(2) << kiosk4.getTotalSales() << endl;
+
+    kiosk5.ScanItem(firstPrice);
+    kiosk5.ScanItem(secondPrice);
+    kiosk5.ScanItem(thirdPrice);
+    kiosk5.ScanItem(fourthPrice);
+    kiosk5.Checkout();
+    cout << "Current Amount Due: " << fixed << setprecision(2) << kiosk5.getCurrentAmountDue() << endl;
+    cout << "Total Sales: " << fixed << setprecision(2) << kiosk5.getTotalSales() << endl;
+
     return 0;
 }//end main()

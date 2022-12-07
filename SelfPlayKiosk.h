@@ -34,16 +34,26 @@ class SelfPlayKiosk {
 
         // Step 2
         void ScanItem(double price);
+        // Step 3
+        void Checkout();
         // void cancelTransaction();
-        // void ckeckout();
         // double makePayment();
 };//end SelfPlayKiosk
 
 // Step 2
 void SelfPlayKiosk::ScanItem(double price) {
+    // Add an Item to the Amount Due
     if (price > 0)
         currentAmountDue += price;
     //return currentAmountDue;
 }//end ScanItem()
+
+// Step 3
+void SelfPlayKiosk::Checkout() {
+    // Add Tax to the Payment
+    currentAmountDue *= SALES_TAX;
+    // Add the Payment to the Kiosk's Sales
+    totalSales += currentAmountDue;
+}//end Checkout()
 
 #endif
