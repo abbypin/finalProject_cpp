@@ -1,25 +1,23 @@
-#include "Artwork.h"
 #include "Artist.h"
+#include "Artwork.h"
 #include <iostream>
 #include <string>
 using namespace std;
 
 int main() {
-    string userFirstName, userLastName, artistName = "", userTitle;
+    string userArtistName = "", userTitle;
     int userBirthYear, userDeathYear, userYearCreated;
 
-    cin >> userFirstName;
-    cin >> userLastName;
+    getline(cin, userArtistName);
     cin >> userBirthYear;
     cin >> userDeathYear;
-    getline(cin, userTitle);
     cin.ignore();
+    getline(cin, userTitle);
     cin >> userYearCreated;
 
     Artwork artworkLabel = Artwork();
-    artworkLabel.setFirstName(userFirstName);
-    artworkLabel.setLastName(userLastName);
-    artworkLabel.setFullName();
+    
+    artworkLabel.setArtistName(userArtistName);
     artworkLabel.setBirthYear(userBirthYear);
     artworkLabel.setDeathYear(userDeathYear);
     artworkLabel.setArtworkTitle(userTitle);
