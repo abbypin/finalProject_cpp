@@ -38,7 +38,9 @@ class SelfPayKiosk {
         void Checkout();
         // Step 4
         void MakePayment(double payment);
-        // void cancelTransaction();
+        // Step 5
+        void ResetKiosk();
+        void CancelTransaction();
         
 };//end SelfPlayKiosk
 
@@ -74,5 +76,15 @@ void SelfPayKiosk::MakePayment(double payment) {
         }//end else-if
     } //end if
 }//end MakePayment()
+
+void SelfPayKiosk::ResetKiosk() {
+    currentAmountDue = 0.0;
+    totalSales = 0.0;
+    customersServed = 0;
+}//end ResetKiosk()
+
+void SelfPayKiosk::CancelTransaction() {
+    currentAmountDue = 0.0;
+}//end CancelTransaction()
 
 #endif
