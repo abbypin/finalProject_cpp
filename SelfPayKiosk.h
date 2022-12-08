@@ -8,7 +8,7 @@ using namespace std;
 class SelfPayKiosk {
     private:
         // Step 0
-        const int SALES_TAX = 0.7; // 7%
+        const double SALES_TAX = 0.07; // 7%
         int customersServed;
         double totalSales;
         double currentAmountDue;
@@ -36,8 +36,10 @@ class SelfPayKiosk {
         void ScanItem(double price);
         // Step 3
         void Checkout();
+        // Step 4
+        void MakePayment(double payment);
         // void cancelTransaction();
-        // double makePayment();
+        
 };//end SelfPlayKiosk
 
 // Step 2
@@ -51,9 +53,26 @@ void SelfPayKiosk::ScanItem(double price) {
 // Step 3
 void SelfPayKiosk::Checkout() {
     // Add Tax to the Payment
-    currentAmountDue += currentAmountDue * SelfPayKiosk::SALES_TAX;
-    // Add the Payment to the Kiosk's Sales
-    totalSales += currentAmountDue;
+    currentAmountDue += (currentAmountDue * SALES_TAX);
 }//end Checkout()
+
+// Step 4
+void SelfPayKiosk::MakePayment(double payment) {
+    if (payment > 0) {
+        if (payment >= currentAmountDue) {
+            // Add to the Total Sales
+            totalSales += currentAmountDue;
+            // Incrament Customers Served
+            customersServed += 1;
+            // Reset for Next Customer
+            currentAmountDue = 0.0;
+        } else if (payment < currentAmountDue) {
+            // Add to the Total Sales
+            totalSales += payment;
+            // Reduce the Amount Due
+            currentAmountDue -= payment;
+        }//end else-if
+    } //end if
+}//end MakePayment()
 
 #endif

@@ -16,46 +16,100 @@ int main() {
     double firstPrice = 20.00;
     double secondPrice = -10.00;
     double thirdPrice = 20.55;
-    // First Scan
-    cout << "\nSecond Test: " << endl;
+    double fourthPrice = 10.40;
+// First Customer
+    // Step 2 Test // First Scan
+    cout << "\n\nFirst Customer: " << endl;
     kiosk.ScanItem(firstPrice);
     cout << "First Price Scan: " << fixed << setprecision(2) << kiosk.getCurrentAmountDue() << endl;
-    // Second Scan
-    kiosk.ScanItem(secondPrice);
-    cout << "Second Price Scan: " << fixed << setprecision(2) << kiosk.getCurrentAmountDue() << endl;
-    // Third Scan
-    kiosk.ScanItem(thirdPrice);
-    cout << "Third Price Scan: " << fixed << setprecision(2) << kiosk.getCurrentAmountDue() << endl;
-
-    SelfPayKiosk kiosk2 = SelfPayKiosk();
-    SelfPayKiosk kiosk3 = SelfPayKiosk();
-    SelfPayKiosk kiosk4 = SelfPayKiosk();
-    double fourthPrice = 10.40;
 
     // Step 3 Test
-    cout << "\nThird Test: " << endl;
-    kiosk2.ScanItem(firstPrice);
-    kiosk2.Checkout();
-    cout << "Current Amount Due: " << fixed << setprecision(2) << kiosk2.getCurrentAmountDue() << endl;
-    cout << "Total Sales: " << fixed << setprecision(2) << kiosk2.getTotalSales() << endl;
-
-    kiosk3.ScanItem(firstPrice);
-    kiosk3.ScanItem(secondPrice);
-    kiosk3.Checkout();
-    cout << "\nCurrent Amount Due: " << fixed << setprecision(2) << kiosk3.getCurrentAmountDue() << endl;
-    cout << "Total Sales: " << fixed << setprecision(2) << kiosk3.getTotalSales() << endl;
-
     kiosk.Checkout();
-    cout << "\nCurrent Amount Due: " << fixed << setprecision(2) << kiosk.getCurrentAmountDue() << endl;
-    cout << "Total Sales: " << fixed << setprecision(2) << kiosk.getTotalSales() << endl;
+    cout << "\nCheckout Current Amount Due: " << fixed << setprecision(2) << kiosk.getCurrentAmountDue() << endl;
+    
 
-    kiosk4.ScanItem(firstPrice);
-    kiosk4.ScanItem(secondPrice);
-    kiosk4.ScanItem(thirdPrice);
-    kiosk4.ScanItem(fourthPrice);
-    kiosk4.Checkout();
-    cout << "\nCurrent Amount Due: " << fixed << setprecision(2) << kiosk4.getCurrentAmountDue() << endl;
-    cout << "Total Sales: " << fixed << setprecision(2) << kiosk4.getTotalSales() << endl;
+    // Step 4 Test
+    cout << "\nCurrent Amount Due: " << fixed << setprecision(2) << kiosk.getCurrentAmountDue() << endl;
+    kiosk.MakePayment(10.00);
+    cout << "Results: " << endl;
+    cout << "Current Amount Due: " << fixed << setprecision(2) << kiosk.getCurrentAmountDue() << endl;
+    cout << "Total Sales: " << fixed << setprecision(2) << kiosk.getTotalSales() << endl;
+    cout << "Customers Served: " << kiosk.getCustomersServed() << endl;
+    cout << "\nCurrent Amount Due: " << fixed << setprecision(2) << kiosk.getCurrentAmountDue() << endl;
+    kiosk.MakePayment(11.40);
+    cout << "Results: " << endl;
+    cout << "Current Amount Due: " << fixed << setprecision(2) << kiosk.getCurrentAmountDue() << endl;
+    cout << "Total Sales: " << fixed << setprecision(2) << kiosk.getTotalSales() << endl;
+    cout << "Customers Served: " << kiosk.getCustomersServed() << endl;
+
+// Second Customer
+    // Step 2 Test // Second Scan
+    cout << "\n\nSecond Customer: " << endl;
+    kiosk.ScanItem(firstPrice);
+    kiosk.ScanItem(secondPrice);
+    cout << "Second Price Scan: " << fixed << setprecision(2) << kiosk.getCurrentAmountDue() << endl;
+    // Step 3 Test
+    kiosk.Checkout();
+    cout << "\nCheckout Current Amount Due: " << fixed << setprecision(2) << kiosk.getCurrentAmountDue() << endl;
+    
+    // Step 4 Test
+    cout << "\nCurrent Amount Due: " << fixed << setprecision(2) << kiosk.getCurrentAmountDue() << endl;
+    kiosk.MakePayment(21.40);
+    cout << "Results: " << endl;
+    cout << "Current Amount Due: " << fixed << setprecision(2) << kiosk.getCurrentAmountDue() << endl;
+    cout << "Total Sales: " << fixed << setprecision(2) << kiosk.getTotalSales() << endl;
+    cout << "Customers Served: " << kiosk.getCustomersServed() << endl;
+
+// Third Customer
+    // Step 2 Test // Third Scan
+    cout << "\n\nThird Customer: " << endl;
+    kiosk.ScanItem(firstPrice);
+    kiosk.ScanItem(secondPrice);
+    kiosk.ScanItem(thirdPrice);
+    cout << "Third Price Scan: " << fixed << setprecision(2) << kiosk.getCurrentAmountDue() << endl;
+    // Step 3 Test
+    kiosk.Checkout();
+    cout << "\nCheckout Current Amount Due: " << fixed << setprecision(2) << kiosk.getCurrentAmountDue() << endl;
+    
+    // Step 4 Test
+    cout << "\nCurrent Amount Due: " << fixed << setprecision(2) << kiosk.getCurrentAmountDue() << endl;
+    kiosk.MakePayment(0.00);
+    cout << "Results: " << endl;
+    cout << "Current Amount Due: " << fixed << setprecision(2) << kiosk.getCurrentAmountDue() << endl;
+    cout << "Total Sales: " << fixed << setprecision(2) << kiosk.getTotalSales() << endl;
+    cout << "Customers Served: " << kiosk.getCustomersServed() << endl;
+    // Step 4 Test
+    cout << "\nCurrent Amount Due: " << fixed << setprecision(2) << kiosk.getCurrentAmountDue() << endl;
+    kiosk.MakePayment(35.00);
+    cout << "Results: " << endl;
+    cout << "Current Amount Due: " << fixed << setprecision(2) << kiosk.getCurrentAmountDue() << endl;
+    cout << "Total Sales: " << fixed << setprecision(2) << kiosk.getTotalSales() << endl;
+    cout << "Customers Served: " << kiosk.getCustomersServed() << endl;
+    // Step 4 Test
+    cout << "\nCurrent Amount Due: " << fixed << setprecision(2) << kiosk.getCurrentAmountDue() << endl;
+    kiosk.MakePayment(8.39);
+    cout << "Results: " << endl;
+    cout << "Current Amount Due: " << fixed << setprecision(2) << kiosk.getCurrentAmountDue() << endl;
+    cout << "Total Sales: " << fixed << setprecision(2) << kiosk.getTotalSales() << endl;
+    cout << "Customers Served: " << kiosk.getCustomersServed() << endl;
+
+// Fourth Customer
+    cout << "\n\nFourth Customer: " << endl;
+    kiosk.ScanItem(firstPrice);
+    kiosk.ScanItem(secondPrice);
+    kiosk.ScanItem(thirdPrice);
+    kiosk.ScanItem(fourthPrice);
+    kiosk.Checkout();
+    cout << "Checkout Current Amount Due: " << fixed << setprecision(2) << kiosk.getCurrentAmountDue() << endl;
+    
+    
+    // Step 4 Test
+    cout << "\nCurrent Amount Due: " << fixed << setprecision(2) << kiosk.getCurrentAmountDue() << endl;
+    kiosk.MakePayment(57.55);
+    cout << "Results: " << endl;
+    cout << "Current Amount Due: " << fixed << setprecision(2) << kiosk.getCurrentAmountDue() << endl;
+    cout << "Total Sales: " << fixed << setprecision(2) << kiosk.getTotalSales() << endl;
+    cout << "Customers Served: " << kiosk.getCustomersServed() << endl;
 
     return 0;
 }//end main()
