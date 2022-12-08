@@ -51,6 +51,7 @@ int main() {
     // Step 3 Test
     kiosk.Checkout();
     cout << "\nCheckout Current Amount Due: " << fixed << setprecision(2) << kiosk.getCurrentAmountDue() << endl;
+    // Step 5 Test
     kiosk.CancelTransaction();
     cout << "\nCancel Transaction: " << endl;
     cout << "Result: " << endl;
@@ -73,6 +74,7 @@ int main() {
     kiosk.ScanItem(secondPrice);
     kiosk.ScanItem(thirdPrice);
     cout << "Third Price Scan: " << fixed << setprecision(2) << kiosk.getCurrentAmountDue() << endl;
+    
     // Step 3 Test
     kiosk.Checkout();
     cout << "\nCheckout Current Amount Due: " << fixed << setprecision(2) << kiosk.getCurrentAmountDue() << endl;
@@ -108,7 +110,6 @@ int main() {
     kiosk.Checkout();
     cout << "Checkout Current Amount Due: " << fixed << setprecision(2) << kiosk.getCurrentAmountDue() << endl;
     
-    
     // Step 4 Test
     cout << "\nCurrent Amount Due: " << fixed << setprecision(2) << kiosk.getCurrentAmountDue() << endl;
     kiosk.MakePayment(57.55);
@@ -117,6 +118,7 @@ int main() {
     cout << "Total Sales: " << fixed << setprecision(2) << kiosk.getTotalSales() << endl;
     cout << "Customers Served: " << kiosk.getCustomersServed() << endl;
 
+    // Step 5 Test
     kiosk.ResetKiosk();
     cout << "\n\nReset Kiosk: " << endl;
     cout << "Current Amount Due: " << fixed << setprecision(2) << kiosk.getCurrentAmountDue() << endl;
