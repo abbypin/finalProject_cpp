@@ -21,6 +21,17 @@ void SimulateSales(int numSales, double initialPrice, double incrPrice) {
         // Print New Current Amount Due
         cout << "New Current Amount Due: $" << fixed << setprecision(2) << kioskptr->getCurrentAmountDue() << endl;
 
+        // Step 7 Test
+        // Payment Variable
+        double payment1 = kioskptr->getCurrentAmountDue() + 1.00;
+        // MakePayment
+        kioskptr->MakePayment(payment1);
+        // Print Make Payment
+        cout << "\nTest 7 Results: " << endl;
+        cout << "Current Amount Due: $" << fixed << setprecision(2) << kioskptr->getCurrentAmountDue() << endl;
+        cout << "Total Sales: $" << fixed << setprecision(2) << kioskptr->getTotalSales() << endl;
+        cout << "Customers Served: " << kioskptr->getCustomersServed() << endl;
+
         // Checkout
         kioskptr->Checkout();
         // Print Checkout
@@ -28,10 +39,10 @@ void SimulateSales(int numSales, double initialPrice, double incrPrice) {
         cout << "Current Amount Due: $" << fixed << setprecision(2) << kioskptr->getCurrentAmountDue() << endl;
 
         // Payment Variable
-        double payment = kioskptr->getCurrentAmountDue() + 1.00;
+        double payment2 = kioskptr->getCurrentAmountDue() + 1.00;
 
         // MakePayment
-        kioskptr->MakePayment(payment);
+        kioskptr->MakePayment(payment2);
         // Print Make Payment
         cout << "Results: " << endl;
         cout << "Current Amount Due: $" << fixed << setprecision(2) << kioskptr->getCurrentAmountDue() << endl;
@@ -47,7 +58,7 @@ void SimulateSales(int numSales, double initialPrice, double incrPrice) {
 
 int main() {
     // Variables
-    int numSales = 8;
+    int numSales = 3;
     double initialPrice = 5.00;
     double incrPrice = 10.50;
     // Step 6

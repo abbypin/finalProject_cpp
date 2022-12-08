@@ -12,12 +12,15 @@ class SelfPayKiosk {
         int customersServed;
         double totalSales;
         double currentAmountDue;
+        // Step 7
+        bool checkedOut;
     public:
         // Step 1
         SelfPayKiosk() {
             customersServed = 0;
             totalSales = 0.0;
             currentAmountDue = 0.0;
+            checkedOut = 0;
         }//end constructor
 
         int getCustomersServed() {
@@ -56,11 +59,13 @@ void SelfPayKiosk::ScanItem(double price) {
 void SelfPayKiosk::Checkout() {
     // Add Tax to the Payment
     currentAmountDue += (currentAmountDue * SALES_TAX);
+    // Checked Out Set to True
+    checkedOut = 1;
 }//end Checkout()
 
 // Step 4
 void SelfPayKiosk::MakePayment(double payment) {
-    if (payment > 0) {
+    if (payment > 0 && checkedOut == 1) {
         if (payment >= currentAmountDue) {
             // Add to the Total Sales
             totalSales += currentAmountDue;
@@ -68,23 +73,27 @@ void SelfPayKiosk::MakePayment(double payment) {
             customersServed += 1;
             // Reset for Next Customer
             currentAmountDue = 0.0;
+            // Checked Out Set to False
+            checkedOut = 0;
         } else if (payment < currentAmountDue) {
             // Add to the Total Sales
             totalSales += payment;
             // Reduce the Amount Due
             currentAmountDue -= payment;
         }//end else-if
-    } //end if
+    }//end if
 }//end MakePayment()
 
 void SelfPayKiosk::ResetKiosk() {
     currentAmountDue = 0.0;
     totalSales = 0.0;
     customersServed = 0;
+    checkedOut = 0;
 }//end ResetKiosk()
 
 void SelfPayKiosk::CancelTransaction() {
-    currentAmountDue = 0.0;
+    if (checkedOut == 0)
+        currentAmountDue = 0.0;
 }//end CancelTransaction()
 
 #endif
