@@ -24,9 +24,14 @@ string ReverseString(string str) {
 }//end ReverseString()
 
 int main() {
-    string str = "Hello";
+    // Variable
+    string str = "";
+    // Input
+    getline(cin, str);
+
+    // Print
     cout << "Reverse of \"" << str << "\" is \"";
-    ReverseString(str);
+    ReverseString(str); // call recursive function
     cout << "\"." << endl;
 
     return 0;
