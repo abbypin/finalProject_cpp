@@ -75,9 +75,19 @@ int main() {
     } else {
          // Search File
         if (searchOption == 0) {
-            findID(searchKey, file);
+            // Find Student ID
+            try {
+                findID(searchKey, file);
+            } catch (runtime_error err) {
+                cout << "Student ID not found for " + searchKey << endl;
+            }//end try-catch
         } else if (searchOption == 1) {
-            findName(searchKey, file);
+            // Find Student Name
+            try {
+                findName(searchKey, file);
+            } catch (runtime_error err) {
+                cout << "Student Name not found for " + searchKey << endl;
+            }//end try-catch
         } else
             cout << "Error: An invailid search option was chosen." << endl;
         //end else-if
